@@ -1,0 +1,81 @@
+.introdução{
+  max-width: 1200px; /* para não espandir mais de conteudo do que eu quero */
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+ grid-template-columns:  1fr 2fr;
+ gap: 100px;
+ align-items: center;
+ 
+}
+.introdução h1{
+  font-size: 4.5rem;
+  line-height: 1.125;
+  margin-bottom: 30px;  /* geralmente aqui se trabalha com px */
+  position: relative;
+}
+.introdução h1::before{
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url("./imagens/detalhe.svg") no-repeat center;
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1;
+}
+.introdução p{
+  font-size: 1.5rem;
+  color: #525252;
+
+}
+
+@media (max-width:890px){
+  .introdução h1{
+    font-size:3rem;
+  }
+  .introdução h1::before{
+    width:110px;
+    height: 80px;
+  }
+}
+@media (max-width:690px){
+  .introdução{
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .introdução h1{
+    font-size: 2rem;
+  }
+  .introdução p{
+    font-size: 1.2rem;
+  }
+  .introdução h1::before{
+    display: none;
+  }
+}
+@media (max-width:490px){
+  .introdução h1{
+    font-size: 1rem;
+  }
+  .introdução p{
+    font-size: 1rem;
+  }
+}
+@media (max-width:390px){
+  .introdução{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .introdução h1{
+    font-size: .80rem;
+  }
+  .introdução p{
+    font-size: .60rem;
+  }
+  .introdução img{
+    display: none;
+  }
+
+}
